@@ -9,6 +9,8 @@ int main(int argc, char *argv[]) {
     printf("1 = Pedra\n");
     printf("2 = Papel\n");
     printf("3 = Teoura\n");
+    printf("4 = Spock\n");
+    printf("5 = Lagarto\n");
     printf("Escolha uma alternativa: ");
     scanf("%d", &jogador);
     switch (jogador) {
@@ -24,11 +26,19 @@ int main(int argc, char *argv[]) {
       printf("\nJogador escolheu Tesoura\n");
       break;
 
+    case 4:
+      printf("\nJogador escolheu Spock\n");
+      break;
+
+    case 5:
+      printf("\nJogador escolheu Lagarto\n");
+      break;
+
     default:
-      printf("Alternativa inválida\n");
+      printf("\nAlternativa inválida\n");
     }
     srand(time(NULL));
-    computador = ("%d", rand() % 3 + 1);
+    computador = ("%d", rand() % 5 + 1);
     switch (computador) {
     case 1:
       printf("\nComputador escolheu Pedra\n");
@@ -41,12 +51,27 @@ int main(int argc, char *argv[]) {
     case 3:
       printf("\nComputador escolheu Tesoura\n");
       break;
+
+    case 4:
+      printf("\nComputador escolheu Spock\n");
+      break;
+
+    case 5:
+      printf("\nComputador escolheu Lagarto\n");
+      break;
     }
     if (jogador == computador) {
       printf("\nEMPATE\n");
     } else if ((jogador == 1 && computador == 3) ||
                (jogador == 2 && computador == 1) ||
-               (jogador == 3 && computador == 2)) {
+               (jogador == 3 && computador == 2) ||
+               (jogador == 4 && computador == 3) ||
+               (jogador == 4 && computador == 1) ||
+               (jogador == 5 && computador == 2) ||
+               (jogador == 1 && computador == 5) ||
+               (jogador == 3 && computador == 5) ||
+               (jogador == 2 && computador == 4) ||
+               (jogador == 5 && computador == 4)) {
       printf("\nJogador Venceu!\n");
     } else {
       printf("\nComputador Venceu!\n");
